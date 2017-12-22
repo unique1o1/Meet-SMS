@@ -27,6 +27,7 @@ First lets make an _alias_ so, we don't have to type _username_ and _password_ e
 In your terminal type:
 
 > sudo nano ~/.bashrc for bash users
+
 > sudo nano ~/.zshrc for zsh users
 
 ##### Add the following to the end of your file
