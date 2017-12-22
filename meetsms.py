@@ -26,7 +26,7 @@ for i in range(1, 9, 2):
             message = sys.argv[i + 1]
 
     except IndexError as e:
-        print("not enough arguments")
+        print("not enough arguments \n{}".format(e))
         exit()
 
 
