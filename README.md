@@ -1,6 +1,6 @@
 # SimepleSMS
 
-SimpleSMS is a python cript for sending SMS using NTC Meet. This script makes it simple to send SMS without having to go to the site.
+SimpleSMS is a python script for sending SMS using NTC Meet. This script makes it simple to send SMS without having to go to the site.
 
 ## Requirement
 
