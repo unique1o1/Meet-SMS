@@ -28,7 +28,7 @@ In your terminal type:
 
 > sudo nano ~/.bashrc
 
-###### Add the following to the end of your file
+##### Add the following to the end of your file
 
 > alias sms="sms -u yourusername -p yourpassword"
 
