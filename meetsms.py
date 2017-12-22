@@ -50,7 +50,7 @@ result = session_req.post(sms_url, messages)
 html_ = str(result.content)
 index_ = re.search("Free SMS Quota", html_)
 if index_:
-    Quota = html_[index_.start():index_.start() + 45]
+    Quota = html_[index_.start():index_.start() + 46]
     print("Success.\n" + Quota)
 else:
     print("Either your out of Quota or something went wrong.")
