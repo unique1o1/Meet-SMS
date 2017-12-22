@@ -1,7 +1,6 @@
 #! /usr/bin/env python3
 import requests
 import sys
-# from bs4 import BeautifulSoup
 import re
 
 for i in range(1, 9, 2):
@@ -38,7 +37,7 @@ print("Sending SMS...")
 data = {
     "username": username,
     "password": password,
-    # "authenticity_token": crsf_token
+
 }
 
 
@@ -49,10 +48,6 @@ messages = {"recipient": numbers,
 resp = session_req.post(login_url, data)
 result = session_req.post(sms_url, messages)
 html_ = str(result.content)
-
-
-# with open('meetsms.txt', 'w') as f:
-#     f.write(str(aaa))
 index_ = re.search("Free SMS Quota", html_)
 if index_:
     Quota = html_[index_.start():index_.start() + 45]
