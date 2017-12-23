@@ -2,15 +2,15 @@
 import requests
 import sys
 import re
-
-for i in range(1, 9, 2):
+import getpass
+for i in range(1, 7, 2):
     try:
         if(sys.argv[i] == "-u"):
             username = sys.argv[i + 1]
 
-        elif (sys.argv[i] == "-p"):
-            password = sys.argv[i + 1]
-
+        elif (sys.argv[i] == "-m"):
+            message = sys.argv[i + 1]
+            print("jbvhj")
         elif (sys.argv[i] == "-r"):
 
             recipcent = sys.argv[i + 1].split(",")
@@ -22,14 +22,13 @@ for i in range(1, 9, 2):
                     numbers = j if numbers is None else numbers + "," + j
                 else:
                     raise ValueError("The number you entered is mistake")
-        elif (sys.argv[i] == "-m"):
-            message = sys.argv[i + 1]
+                    exit()
 
     except IndexError as e:
         print("not enough arguments \n{}".format(e))
         exit()
 
-
+password = getpass.getpass("Enter your password: ")
 login_url = "http://www.meet.net.np/meet/action/login"
 sms_url = "http://www.meet.net.np/meet/mod/sms/actions/send.php"
 session_req = requests.session()
