@@ -10,7 +10,7 @@ for i in range(1, 7, 2):
 
         elif (sys.argv[i] == "-m"):
             message = sys.argv[i + 1]
-            print("jbvhj")
+
         elif (sys.argv[i] == "-r"):
 
             recipcent = sys.argv[i + 1].split(",")
@@ -25,25 +25,30 @@ for i in range(1, 7, 2):
                     exit()
 
     except IndexError as e:
-        print("not enough arguments \n{}".format(e))
+        print("not enough arguments \n  Use the following options:\n -u for username \n -m for message \n -r for receiver's number".format(e))
         exit()
 
 password = getpass.getpass("Enter your password: ")
 login_url = "http://www.meet.net.np/meet/action/login"
 sms_url = "http://www.meet.net.np/meet/mod/sms/actions/send.php"
 session_req = requests.session()
-print("Sending SMS...")
+
 data = {
     "username": username,
     "password": password,
 
 }
 
+try:
 
-messages = {"recipient": numbers,
-            "message": message,
-            "SmsLanguage": "English",
-            "sendbutton": "Send Now"}
+    messages = {"recipient": numbers,
+                "message": message,
+                "SmsLanguage": "English",
+                "sendbutton": "Send Now"}
+except NameError as e:
+    print("Error! {}\nUse the following options:\n -u for username \n -m for message \n -r for receiver's number".format(e))
+    exit()
+print("Sending SMS...")
 resp = session_req.post(login_url, data)
 result = session_req.post(sms_url, messages)
 html_ = str(result.content)
