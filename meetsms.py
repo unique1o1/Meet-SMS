@@ -56,5 +56,8 @@ index_ = re.search("Free SMS Quota", html_)
 if index_:
     Quota = html_[index_.start():index_.start() + 46]
     print("Success.\n" + Quota)
+
+elif re.search("loginform", html_):
+    print("The username/password you entered in incorrect")
 else:
     print("Either your out of Quota or something went wrong.")
