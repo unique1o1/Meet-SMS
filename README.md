@@ -17,13 +17,12 @@ SimpleSMS is a python script for sending SMS using NTC Meet. This script makes i
 ##### Syntax
 
 `-u` for username
-`-p` for password
 `-m` for message
 `-r` for receiver's number
 
 ## How to use
 
-First lets make an _alias_ so, we don't have to type _username_ and _password_ everytime.
+First lets make an _alias_ so, we don't have to type _username_ everytime.
 In your terminal type:
 
 > sudo nano ~/.bashrc for bash users
@@ -32,7 +31,7 @@ In your terminal type:
 
 ##### Add the following to the end of your file
 
-> alias sms="sms -u yourusername -p yourpassword"
+> alias sms="sms -u yourusername"
 
 ##### Sending SMS
 
