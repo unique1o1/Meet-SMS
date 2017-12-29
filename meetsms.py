@@ -14,6 +14,9 @@ for i in range(1, 7, 2):
         elif (sys.argv[i] == "-r"):
 
             recipcent = sys.argv[i + 1].split(",")
+            if len(recipcent) > 10:
+                print("Sending more than 10 SMS is not supported.")
+                exit()
             numbers = None
             ncell = None
             for j in recipcent:
