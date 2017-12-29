@@ -15,11 +15,15 @@ for i in range(1, 7, 2):
 
             recipcent = sys.argv[i + 1].split(",")
             numbers = None
+            ncell = None
             for j in recipcent:
                 j = j.strip()
 
                 if re.match(r"^\d{10}$", j):
-                    numbers = j if numbers is None else numbers + "," + j
+                    if(int(j) >= 9800000000 and int(j) <= 9829999999):
+                        ncell = j if ncell is None else ncell + "," + j
+                    else:
+                        numbers = j if numbers is None else numbers + "," + j
                 else:
                     raise ValueError("The number you entered is mistake")
                     exit()
@@ -56,8 +60,11 @@ index_ = re.search("Free SMS Quota", html_)
 if index_:
     Quota = html_[index_.start():index_.start() + 46]
     print("Success.\n" + Quota)
-
+    if ncell is not None:
+        print(
+            "SMS to {} were not send because Ncell numbers are not supported".format(ncell))
 elif re.search("loginform", html_):
     print("The username/password you entered in incorrect")
 else:
+    print("SMS to {} were not send because Ncell numbers are not supported".format(ncell))
     print("Either your out of Quota or something went wrong.")
