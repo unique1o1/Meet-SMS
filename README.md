@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/unique1o1/Meet-SMS.svg?branch=master)](https://travis-ci.org/unique1o1/SMS)
 
-# SimepleSMS
+# MEETSMS
 
 Meet-SMS is a python script for sending SMS using NTC Meet. This script makes it simple to send SMS without having to go to the site.
 
