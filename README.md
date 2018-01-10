@@ -1,8 +1,9 @@
-[![Build Status](https://travis-ci.org/unique1o1/SimpleSMS.svg?branch=master)](https://travis-ci.org/unique1o1/SimpleSMS)
+[![Build Status](https://travis-ci.org/unique1o1/Meet-SMS.svg?branch=master)](https://travis-ci.org/unique1o1/
+SMS)
 
 # SimepleSMS
 
-SimpleSMS is a python script for sending SMS using NTC Meet. This script makes it simple to send SMS without having to go to the site.
+Meet-SMS is a python script for sending SMS using NTC Meet. This script makes it simple to send SMS without having to go to the site.
 
 ## Requirement
 
@@ -12,8 +13,8 @@ SimpleSMS is a python script for sending SMS using NTC Meet. This script makes i
 ## Installation
 * From GitHub
 
-        git clone https://github.com/unique1o1/SimpleSMS
-        cd SimpleSMS
+        git clone https://github.com/unique1o1/Meet-SMS
+        cd Meet-SMS
         chmod 775 install.sh
         ./install.sh
 
