@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name="SimpleSMS",
+    name="MeetSMS",
     version="1.1",
     url="https://github.com/unique1o1/SimpleSMS",
 
@@ -21,6 +21,6 @@ setuptools.setup(
     ],
     entry_points="""
     [console_scripts]
-    sms=simplesms.meetsms:main
+    sms=meetsms.meetsms:main
     """,
 )
