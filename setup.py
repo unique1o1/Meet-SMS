@@ -20,6 +20,7 @@ setuptools.setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 2.7',
     ],
+    download_url='https://github.com/unique1o1/Meet-SMS/archive/v1.3.1.tar.gz',
     entry_points="""
     [console_scripts]
     sms=meetsms.meetsms:main
