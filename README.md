@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/unique1o1/SimpleSMS.svg?branch=master)](https://travis-ci.org/unique1o1/SimpleSMS)
+
 # SimepleSMS
 
 SimpleSMS is a python script for sending SMS using NTC Meet. This script makes it simple to send SMS without having to go to the site.
