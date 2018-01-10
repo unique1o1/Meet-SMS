@@ -13,7 +13,7 @@ setuptools.setup(
 
     packages=setuptools.find_packages(),
 
-    install_requires=[requests],
+    install_requires=['requests'],
 
     classifiers=[
         'Environment :: Console',
@@ -21,6 +21,6 @@ setuptools.setup(
     ],
     entry_points="""
     [console_scripts]
-    sms=SimepleSMS.meetsms
+    sms=simplesms.meetsms:main
     """,
 )
