@@ -2,7 +2,13 @@
 import requests
 import sys
 import re
+import itertools
+import threading
+import time
 import getpass
+
+
+done = False
 for i in range(1, 7, 2):
     try:
         if(sys.argv[i] == "-u"):
@@ -55,14 +61,29 @@ try:
 except NameError as e:
     print("Error! {}\nUse the following options:\n -u for username \n -m for message \n -r for receiver's number".format(e))
     exit()
-print("Sending SMS...")
+
+
+def animate():
+    for c in itertools.cycle(['|', '/', '-', '\\']):
+        if done:
+            break
+        sys.stdout.write('\rSending ' + c)
+        sys.stdout.flush()
+        time.sleep(0.1)
+    sys.stdout.flush()
+
+
+t = threading.Thread(target=animate)
+t.start()
+
 resp = session_req.post(login_url, data)
 result = session_req.post(sms_url, messages)
 html_ = str(result.content)
 index_ = re.search("Free SMS Quota", html_)
+done = True
 if index_:
     Quota = html_[index_.start():index_.start() + 46]
-    print("Success.\n" + Quota)
+    print("\r Success. \n" + Quota)
     if ncell is not None:
         print(
             "SMS to {} were not send because Ncell numbers are not supported".format(ncell))
@@ -70,4 +91,4 @@ elif re.search("loginform", html_):
     print("The username/password you entered in incorrect")
 else:
     print("SMS to {} were not send because Ncell numbers are not supported".format(ncell))
-    print("Either your out of Quota or something went wrong.")
+    print("Or Either your out of Quota or something went wrong.")
