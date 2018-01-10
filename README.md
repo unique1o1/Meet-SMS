@@ -8,12 +8,17 @@ SimpleSMS is a python script for sending SMS using NTC Meet. This script makes i
 * **Requests Module**
 
 ## Installation
+* From GitHub
 
         git clone https://github.com/unique1o1/SimpleSMS
         cd SimpleSMS
         chmod 775 install.sh
         ./install.sh
 
+* From PIP
+
+        sudo pip install meetsms
+        
 ##### Syntax
 
 `-u` for username
