@@ -10,12 +10,12 @@ Meet-SMS is a python script for sending SMS using NTC Meet. This script makes it
 * **Requests Module**
 
 ## Installation
-* From GitHub
+* From Source
 
         git clone https://github.com/unique1o1/Meet-SMS
         cd Meet-SMS
-        chmod 775 install.sh
-        ./install.sh
+        sudo setup.py install
+    
 
 * From PIP
 
