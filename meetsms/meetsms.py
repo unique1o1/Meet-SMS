@@ -36,7 +36,7 @@ def main():
                 ncell = None
                 for j in recipcent:
                     j = j.strip()
-
+                    # Check for Ncell numbers
                     if re.match(r"^\d{10}$", j):
                         if(int(j) >= 9800000000 and int(j) <= 9829999999):
                             ncell = j if ncell is None else ncell + "," + j
