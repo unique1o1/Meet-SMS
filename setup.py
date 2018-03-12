@@ -8,7 +8,7 @@ setuptools.setup(
     author="Yunik Maharjan",
     author_email="yunik.maharjan@icloud.com",
     license='MIT',
-    description="Send SMS easily from MeetSMS",
+    description="Send SMS easily using MeetSMS",
     long_description=open('README.md').read(),
 
     packages=setuptools.find_packages(),
