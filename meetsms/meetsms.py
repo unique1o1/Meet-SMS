@@ -4,7 +4,6 @@ Meet-SMS - Send SMS easily from MeetSMS
 
 Author: Yunik Maharjan
 '''
-# from __future__ import print_function
 import requests
 import sys
 import re
