@@ -7,7 +7,7 @@ Meet-SMS is a python script for sending SMS using NTC Meet. This script makes it
 ## Requirement
 
 * **Python3**
-* **Requests Module**
+* **Requests**
 
 ## Installation
 * From Source
