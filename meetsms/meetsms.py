@@ -92,7 +92,7 @@ def main():
             "\rSMS to {} was not send because Ncell numbers are not supported".format(ncell))
         print("Or Either your out of Quota or something went wrong.")
 
-
+# for unit testing
 def unit_test(text):
     return text
 
