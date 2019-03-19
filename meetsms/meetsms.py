@@ -37,17 +37,25 @@ def main():
                     j = j.strip()
                     # Check for Ncell numbers
                     if re.match(r"^\d{10}$", j):
-                        if(int(j) >= 9800000000 and int(j) <= 9829999999):
+                        if(re.match(r'^(980)|(981)|(982)', j)):
                             ncell = j if ncell is None else ncell + "," + j
-                        else:
+                        elif (re.match(r'^(984)|(985)|(986)', j)):
                             numbers = j if numbers is None else numbers + "," + j
                     else:
-                        raise ValueError("The number you entered is mistake")
+                        print("The number you entered is mistake")
                         exit()
 
         except IndexError as e:
             print("not enough arguments \n  Use the following options:\n -u for username \n -m for message \n -r for receiver's number".format(e))
             exit()
+    if numbers is None:
+        print(
+            "\rSMS to {} was not send because Ncell numbers are not supported".format(ncell))
+        print("Or Either your out of Quota or something went wrong.")
+        exit()
+    if ncell is not None:
+        print(
+            "SMS to {} will not be send because Ncell numbers are not supported".format(ncell))
 
     password = getpass.getpass("Enter your password: ")
     login_url = "http://www.meet.net.np/meet/action/login"
@@ -92,6 +100,8 @@ def main():
         print("Or Either your out of Quota or something went wrong.")
 
 # for unit testing
+
+
 def unit_test(text):
     return text
 
