@@ -48,6 +48,8 @@ def main():
         except IndexError as e:
             print("not enough arguments \n  Use the following options:\n -u for username \n -m for message \n -r for receiver's number".format(e))
             exit()
+    password = getpass.getpass("Enter your password: ")
+
     if numbers is None:
         if ncell is not None:
             ncell_check(ncell)
@@ -58,7 +60,6 @@ def main():
         ncell_check(ncell)
     if wrongNumber is not None:
         wrongnumber_check(wrongNumber)
-    password = getpass.getpass("Enter your password: ")
     login_url = "http://www.meet.net.np/meet/action/login"
     sms_url = "http://www.meet.net.np/meet/mod/sms/actions/send.php"
     session_req = requests.session()
