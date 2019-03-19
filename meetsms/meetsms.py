@@ -33,6 +33,7 @@ def main():
                     exit()
                 numbers = None
                 ncell = None
+                wrongNumber = None
                 for j in recipcent:
                     j = j.strip()
                     # Check for Ncell numbers
@@ -42,21 +43,21 @@ def main():
                         elif (re.match(r'^(984)|(985)|(986)', j)):
                             numbers = j if numbers is None else numbers + "," + j
                     else:
-                        print("The number you entered is mistake")
-                        exit()
+                        wrongNumber = j if wrongNumber is None else wrongNumber + "," + j
 
         except IndexError as e:
             print("not enough arguments \n  Use the following options:\n -u for username \n -m for message \n -r for receiver's number".format(e))
             exit()
     if numbers is None:
-        print(
-            "\rSMS to {} was not send because Ncell numbers are not supported".format(ncell))
-        print("Or Either your out of Quota or something went wrong.")
+        if ncell is not None:
+            ncell_check(ncell)
+        if wrongNumber is not None:
+            wrongnumber_check(wrongNumber)
         exit()
     if ncell is not None:
-        print(
-            "SMS to {} will not be send because Ncell numbers are not supported".format(ncell))
-
+        ncell_check(ncell)
+    if wrongNumber is not None:
+        wrongnumber_check(wrongNumber)
     password = getpass.getpass("Enter your password: ")
     login_url = "http://www.meet.net.np/meet/action/login"
     sms_url = "http://www.meet.net.np/meet/mod/sms/actions/send.php"
@@ -89,17 +90,26 @@ def main():
     if index_:
         Quota = html_[index_.start():index_.start() + 46]
         print("\rSuccess\n" + Quota)
-        if ncell is not None:
-            print(
-                "SMS to {} was not send because Ncell numbers are not supported".format(ncell))
     elif re.search("loginform", html_):
         print("\rThe username/password you entered in incorrect")
     else:
-        print(
-            "\rSMS to {} was not send because Ncell numbers are not supported".format(ncell))
-        print("Or Either your out of Quota or something went wrong.")
+        print("Either you're out of Quota or something went wrong.")
 
 # for unit testing
+
+
+def ncell_check(ncell):
+
+    if ncell is not None:
+        print(
+            "SMS to {} will not be send because Ncell numbers are not supported".format(ncell))
+
+
+def wrongnumber_check(wrongNumber):
+
+    if wrongNumber is not None:
+        print(
+            "SMS to {} will not be send because the numbers are incorrect".format(wrongNumber))
 
 
 def unit_test(text):
