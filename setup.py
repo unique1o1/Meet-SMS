@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="MeetSMS",
-    version="1.3.1",
+    version="1.3.2",
     url="https://github.com/unique1o1/Meet-SMS",
 
     author="Yunik Maharjan",
@@ -10,7 +10,7 @@ setuptools.setup(
     license='MIT',
     description="Send SMS easily using MeetSMS",
     long_description=open('README.md').read(),
-
+    download_url="https://github.com/unique1o1/Meet-SMS/archive/v1.3.2.tar.gz",
     packages=setuptools.find_packages(),
 
     install_requires=['requests'],
