@@ -12,11 +12,11 @@ import threading
 import time
 import getpass
 
+done = False
+
 
 def main():
-
     global done
-    done = False
     for i in range(1, 7, 2):
         try:
             if(sys.argv[i] == "-u"):
@@ -118,7 +118,7 @@ def unit_test(text):
 
 
 def animate():
-
+    global done
     for c in itertools.cycle(['|', '/', '-', '\\']):
         if done:
             break

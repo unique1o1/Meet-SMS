@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="MeetSMS",
-    version="1.3.2",
+    version="1.3.3",
     url="https://github.com/unique1o1/Meet-SMS",
 
     author="Yunik Maharjan",
