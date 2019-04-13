@@ -32,18 +32,18 @@ Meet-SMS is a python script for sending SMS using NTC Meet. This script makes it
 First lets make an _alias_ so, we don't have to type _username_ everytime.
 In your terminal type:
 
-> sudo nano ~/.bashrc #for bash users
+        sudo nano ~/.bashrc #for bash users
 
-> sudo nano ~/.zshrc #for zsh users
+        sudo nano ~/.zshrc #for zsh users
 
 ##### Add the following to the end of your file
 
-> alias sms="sms -u yourusername"
+        alias sms="sms -u yourusername"
 
 ##### Sending SMS
 
-> sms -r 98**\*\*\*\*** -m "message"
+        sms -r 98**\*\*\*\*** -m "message"
 
 #### Sending sms to multiple people
 
-> sms -r "98**\*\*\*\***, 98**\*\*\*\***" -m "message"
+        sms -r "98**\*\*\*\***, 98**\*\*\*\***" -m "message"
