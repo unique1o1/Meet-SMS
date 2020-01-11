@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/unique1o1/Meet-SMS.svg?branch=master)](https://travis-ci.org/unique1o1/SMS)
 [![Code Climate](https://api.codeclimate.com/v1/badges/dd62ac0f1807796eab52/maintainability.svg)](https://github.com/unique1o1/Meet-SMS)
-# This tool no longer works as NTC's meet SMS server is no loger live/working.
+# This tool no longer works as NTC's meet SMS server is no longer live/working.
 
 # MEETSMS
 
